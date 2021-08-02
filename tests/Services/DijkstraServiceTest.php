@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Services;
 
-
-use DijkstraAlgo\Vertex;
-use DijkstraAlgo\Path;
-use DijkstraAlgo\Services\DijkstraService;
+use DijkstraAlgo\Dijkstra;
 use PHPUnit\Framework\TestCase;
 use Tests\Util\PHPUnitUtil;
 
@@ -15,7 +12,7 @@ final class DijkstraServiceTest extends TestCase
 {
     use PHPUnitUtil;
 
-    private DijkstraService $dijkstraService;
+    private Dijkstra $dijkstraService;
 
     public function testFirstExample(): void
     {
@@ -31,7 +28,7 @@ final class DijkstraServiceTest extends TestCase
             ['B', 'C', 5]
         ];
 
-        $this->dijkstraService = new DijkstraService($vertexes, $paths);
+        $this->dijkstraService = new Dijkstra($vertexes, $paths);
 
         $resultVertexMatrix = $this->dijkstraService->getVertexTable('A');
 
@@ -59,7 +56,7 @@ final class DijkstraServiceTest extends TestCase
             ['E', 'C', 2],
         ];
 
-        $this->dijkstraService = new DijkstraService($vertexes, $paths);
+        $this->dijkstraService = new Dijkstra($vertexes, $paths);
 
         $resultVertexMatrix = $this->dijkstraService->getVertexTable('A');
 
@@ -89,7 +86,7 @@ final class DijkstraServiceTest extends TestCase
             ['B', 'C', 5]
         ];
 
-        $this->dijkstraService = new DijkstraService($vertexes, $paths);
+        $this->dijkstraService = new Dijkstra($vertexes, $paths);
 
         $unhandledNeighbours = PHPUnitUtil::callMethod(
             $this->dijkstraService,
@@ -110,7 +107,7 @@ final class DijkstraServiceTest extends TestCase
             ['Z', 'C', 2],
         ];
 
-        $dijkstraService = new DijkstraService($vertexes, $paths);
+        $dijkstraService = new Dijkstra($vertexes, $paths);
 
         $unhandledNeighbours = PHPUnitUtil::callMethod(
             $dijkstraService,
@@ -136,7 +133,7 @@ final class DijkstraServiceTest extends TestCase
         ];
 
 
-        $dijkstraService = new DijkstraService($vertexes, $paths);
+        $dijkstraService = new Dijkstra($vertexes, $paths);
 
         PHPUnitUtil::callMethod(
             $dijkstraService,
@@ -173,7 +170,7 @@ final class DijkstraServiceTest extends TestCase
         ];
 
 
-        $dijkstraService = new DijkstraService($vertexes, $paths);
+        $dijkstraService = new Dijkstra($vertexes, $paths);
 
         $path = PHPUnitUtil::callMethod(
             $dijkstraService,
@@ -198,7 +195,7 @@ final class DijkstraServiceTest extends TestCase
             ['B', 'C', 5]
         ];
 
-        $dijkstraService = new DijkstraService($vertexes, $paths);
+        $dijkstraService = new Dijkstra($vertexes, $paths);
 
         PHPUnitUtil::callMethod(
             $dijkstraService,
@@ -237,7 +234,7 @@ final class DijkstraServiceTest extends TestCase
             ['B', 'C', 5]
         ];
 
-        $dijkstraService = new DijkstraService($vertexes, $paths);
+        $dijkstraService = new Dijkstra($vertexes, $paths);
 
         $dijkstraService->vertexMatrix = [
             'A' =>['A', 0, null],
@@ -277,7 +274,7 @@ final class DijkstraServiceTest extends TestCase
             ['B', 'C', 5]
         ];
 
-        $dijkstraService = new DijkstraService($vertexes, $paths);
+        $dijkstraService = new Dijkstra($vertexes, $paths);
 
         $dijkstraService->vertexMatrix = [
             'A' =>['A', 0, null],
@@ -317,7 +314,7 @@ final class DijkstraServiceTest extends TestCase
             ['B', 'C', 5]
         ];
 
-        $dijkstraService = new DijkstraService($vertexes, $paths);
+        $dijkstraService = new Dijkstra($vertexes, $paths);
 
         $dijkstraService->vertexMatrix = [
             'A' =>['A', 0, null],
