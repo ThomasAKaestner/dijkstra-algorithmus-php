@@ -41,12 +41,14 @@ class DijkstraInterface
     private function createVertexMatrix(): void;
     
     /**
+    * Returns the unhandeld Neighbours. 
     * @param string $handledVertex
     * @return array
     */
     private function getUnhandledNeighbours(string $handledVertex): array
 
     /**
+    * Returns the path by the two vertex keys. 
     * @param string $vertexKey1
     * @param string $vertexKey2
     * @return array
@@ -54,11 +56,13 @@ class DijkstraInterface
     private function getPathByVertexKeys(string $vertexKey1, string $vertexKey2): array
 
     /**
+    * Initializes the starting vertex distance to itselfe with 0.
     * @param string $startingVertex
     */
     private function instantiateStartingPoint(string $startingVertex): void
 
     /**
+    * Handling unhandeled neighbour vertexes.
     * @param string $handledVertex
     * @param string $neighbour
     */

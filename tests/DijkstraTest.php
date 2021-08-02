@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tests\Services;
+namespace Tests;
 
 use DijkstraAlgo\Dijkstra;
 use PHPUnit\Framework\TestCase;
 use Tests\Util\PHPUnitUtil;
 
-final class DijkstraServiceTest extends TestCase
+final class DijkstraTest extends TestCase
 {
     use PHPUnitUtil;
 
